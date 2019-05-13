@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body background="http://fc06.deviantart.net/fs51/i/2009/272/5/5/Comedy_and_Tragedy_by_theArconian.jpg">
+<h1><font color="white">Welcome, admin user !</font></h1>
+
+
+<table  border="1">
+    <font color="white">
+        <thead>
+        <tr>
+            <th><font color="white">play.ID</font></th>
+            <th><font color="white">play.NAME</font></th>
+            <th><font color="white">play.AUTHORNAME</font></th>
+            <th><font color="white">play.TYPE</font></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="play : ${ playsList }" >
+
+            <td th:text="${ play.id }" style="color:#ffffff">ID</td>
+            <td th:text="${ play.name }" style="color:#ffffff"></td>
+            <td th:text="${ play.authorPlay }" style="color:#ffffff"></td>
+            <td th:text="${ play.typePlay }" style="color:#ffffff"></td>
+            </td>
+        </tr>
+        </tbody>
+    </font>
+</table>
+
+<br/>
+<br/>
+<br/>
+
+<form   th:object="${newPlay}" method = "POST">
+    <div class="col-sm-12">
+        <label><font color="gray">Play ID</font></label>
+        <input type = "text" th:field="*{id}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Play Name</font></label>
+        <input type = "text" th:field="*{name}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Author's Play</font></label>
+        <input type = "text" th:field="*{authorPlay}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Play's Type Name</font></label>
+        <input type = "text" th:field="*{typePlay}"/>
+    </div>
+
+
+    <button type="submit" class = "btn btn-primary" name = "action" value="Create Play">ADD Play</button>
+    <button type="submit" class = "btn btn-primary" name = "action" value="Update Play">EDIT Play</button>
+    <button type="submit" class = "btn btn-primary" name = "action" value="Delete Play">DELETE Play</button>
+</form>
+
+<form>
+    <div style="margin:50px">
+        <button  type="submit" onclick=parent.open("http://localhost:8090/infoplay") >SEE INFO'S PLAY</button>
+        <button  type="submit" onclick=parent.open("http://localhost:8090/client") >SEE ALL CLIENTS</button>
+    </div>
+</form>
+
+</body>
+
+</html>
