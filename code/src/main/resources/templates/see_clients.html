@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SeeClients</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body background="https://wallpapercave.com/wp/lORaIgI.jpg">
+<h1><font color="white">See all clients</font></h1>
+
+
+<table  border="1">
+    <font color="white">
+        <thead>
+        <tr>
+            <th><font color="white">client.ID</font></th>
+            <th><font color="white">client.FIRSTNAME</font></th>
+            <th><font color="white">client.LASTNAME</font></th>
+            <th><font color="white">client.EMAIL</font></th>
+            <th><font color="white">client.ADDRESS</font></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="client : ${ clientsList }" >
+
+            <td th:text="${ client.id }" style="color:#ffffff">ID</td>
+            <td th:text="${ client.firstName }" style="color:#ffffff"></td>
+            <td th:text="${ client.lastName }" style="color:#ffffff"></td>
+            <td th:text="${ client.email }" style="color:#ffffff"></td>
+            <td th:text="${ client.address }" style="color:#ffffff"></td>
+            </td>
+        </tr>
+        </tbody>
+    </font>
+</table>
+
+<br/>
+<br/>
+<br/>
+
+</body>
+
+</html>

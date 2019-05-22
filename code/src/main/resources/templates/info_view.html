@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Plays's Info</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body background="https://wallpapercave.com/wp/lORaIgI.jpg">
+<h1><font color="white">See all plays's info !</font></h1>
+
+
+<table  border="1">
+    <font color="white">
+        <thead>
+        <tr>
+            <th><font color="white">play.ID</font></th>
+            <th><font color="white">play.NAME</font></th>
+            <th><font color="white">play.DIRECTORNAME</font></th>
+            <th><font color="white">play.MAJORACTORS</font></th>
+            <th><font color="white">play.DATE</font></th>
+            <th><font color="white">play.DURATION</font></th>
+            <th><font color="white">play.PRICE</font></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="infoplay : ${ infoPlaysList }" >
+
+            <td th:text="${ infoplay.id }" style="color:#ffffff">ID</td>
+            <td th:text="${ infoplay.name }" style="color:#ffffff"></td>
+            <td th:text="${ infoplay.directorPlay }" style="color:#ffffff"></td>
+            <td th:text="${ infoplay.majorActors }" style="color:#ffffff"></td>
+            <td th:text="${ infoplay.date }" style="color:#ffffff"></td>
+            <td th:text="${ infoplay.duration }" style="color:#ffffff"></td>
+            <td th:text="${ infoplay.price }" style="color:#ffffff"></td>
+
+            </td>
+        </tr>
+        </tbody>
+    </font>
+</table>
+
+<br/>
+<br/>
+<br/>
+
+<form   th:object="${newInfoPlay}" method = "POST">
+    <div class="col-sm-12">
+        <label><font color="gray">Play ID</font></label>
+        <input type = "text" th:field="*{id}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Play Name</font></label>
+        <input type = "text" th:field="*{name}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Director Play</font></label>
+        <input type = "text" th:field="*{directorPlay}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Play's Major Actors</font></label>
+        <input type = "text" th:field="*{majorActors}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Play's Date</font></label>
+        <input type = "text" th:field="*{date}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Play's Duration</font></label>
+        <input type = "text" th:field="*{duration}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Play's Price</font></label>
+        <input type = "text" th:field="*{price}"/>
+    </div>
+
+
+    <button type="submit" class = "btn btn-primary" name = "action" value="Create InfoPlay">ADD Info Play</button>
+    <button type="submit" class = "btn btn-primary" name = "action" value="Update InfoPlay">EDIT Info Play</button>
+    <button type="submit" class = "btn btn-primary" name = "action" value="Delete InfoPlay">DELETE Info Play</button>
+</form>
+
+
+</body>
+
+</html>

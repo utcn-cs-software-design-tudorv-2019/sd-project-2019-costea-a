@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Review</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body background="https://wallpapercave.com/wp/lORaIgI.jpg">
+<h1><font color="white">Write a review for your favorite plays !</font></h1>
+<br/>
+<br/>
+<h4><font color="white">Here, you can see all the others's clients reviews at different plays.</font></h4>
+
+<table  border="1">
+    <font color="white">
+        <thead>
+        <tr>
+            <th><font color="white">review.ID</font></th>
+            <th><font color="white">review.PlayName</font></th>
+            <th><font color="white">review.PlayType</font></th>
+            <th><font color="white">review.AuthorReview</font></th>
+            <th><font color="white">review.Message</font></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="review : ${ reviewList }" >
+
+            <td th:text="${ review.id }" style="color:#ffffff">ID</td>
+            <td th:text="${ review.namePlay }" style="color:#ffffff"></td>
+            <td th:text="${ review.typePlay }" style="color:#ffffff"></td>
+            <td th:text="${ review.authorReview }" style="color:#ffffff"></td>
+            <td th:text="${ review.textReview }" style="color:#ffffff"></td>
+            </td>
+        </tr>
+        </tbody>
+    </font>
+</table>
+
+<br/>
+<br/>
+<br/>
+
+<form   th:object="${newReview}" method = "POST">
+    <div class="col-sm-12">
+        <label><font color="gray">Review ID</font></label>
+        <input type = "text" th:field="*{id}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Review PlayName</font></label>
+        <input type = "text" th:field="*{namePlay}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Review PlayType</font></label>
+        <input type = "text" th:field="*{typePlay}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Review AuthorName</font></label>
+        <input type = "text" th:field="*{authorReview}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Review Message</font></label>
+        <input type = "text" th:field="*{textReview}"/>
+    </div>
+
+
+    <button type="submit" class = "btn btn-primary" name = "action" value="Create Review">ADD Review</button>
+    <button type="submit" class = "btn btn-primary" name = "action" value="Update Review">EDIT Review</button>
+    <button type="submit" class = "btn btn-primary" name = "action" value="Delete Review">DELETE Review</button>
+</form>
+
+
+</body>
+
+</html>
