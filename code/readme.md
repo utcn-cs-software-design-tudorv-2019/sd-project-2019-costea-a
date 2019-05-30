@@ -1,1 +1,1 @@
-The final code is in the 'src/main' folder.
+The final code is in the 'code' folder.
