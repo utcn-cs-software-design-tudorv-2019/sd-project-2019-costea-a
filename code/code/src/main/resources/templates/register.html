@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body background="https://wallpapercave.com/wp/lORaIgI.jpg">
+<h1><font color="white">Create a new account!</font></h1>
+<br/>
+<br/>
+<h4><font color="white">Introduce your personal data.</font></h4>
+
+<br/>
+
+
+<form   th:object="${newRegistration}" method = "POST">
+    <div class="col-sm-12">
+        <label><font color="gray">New ID</font></label>
+        <input type = "text" th:field="*{id}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">New Username</font></label>
+        <input type = "text" th:field="*{username}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">New Password</font></label>
+        <input type = "text" th:field="*{password}"/>
+    </div>
+
+
+    <div style="margin:20px">
+        <button  type="submit" onclick=parent.open("http://localhost:8090/login") class = "btn btn-primary" name = "action" value="Create New Account">Sign In !</button>
+    </div>
+</form>
+
+</body>

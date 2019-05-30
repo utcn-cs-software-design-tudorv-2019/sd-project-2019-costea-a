@@ -23,6 +23,7 @@ public class Client {
     @Column
     private String address;
 
+
     public Integer getId() {
         return id;
     }

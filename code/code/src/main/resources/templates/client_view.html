@@ -1,10 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Client</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
 </head>
-<body>
+<body background="https://wallpapercave.com/wp/lORaIgI.jpg">
+<h1><font color="white">Welcome, client user!</font></h1>
+<br/>
+<br/>
+<h4><font color="white">Here, you can see all the others's clients accounts, with their information.</font></h4>
+
+<br/>
+<table  border="1">
+    <font color="white">
+        <thead>
+        <tr>
+            <th><font color="white">client.ID</font></th>
+            <th><font color="white">client.FIRSTNAME</font></th>
+            <th><font color="white">client.LASTNAME</font></th>
+            <th><font color="white">client.EMAIL</font></th>
+            <th><font color="white">client.ADDRESS</font></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="client : ${ clientsList }" >
+
+            <td th:text="${ client.id }" style="color:#ffffff">ID</td>
+            <td th:text="${ client.firstName }" style="color:#ffffff"></td>
+            <td th:text="${ client.lastName }" style="color:#ffffff"></td>
+            <td th:text="${ client.email }" style="color:#ffffff"></td>
+            <td th:text="${ client.address }" style="color:#ffffff"></td>
+            </td>
+        </tr>
+        </tbody>
+    </font>
+</table>
+
+<br/>
+<br/>
+<br/>
+
+<form>
+    <div style="margin:20px">
+        <button  type="submit" onclick=parent.open("http://localhost:8090/play2") class = "btn btn-primary" name = "action" value="Create InfoPlay">See Theatre's Program</button>
+        <button  type="submit" onclick=parent.open("http://localhost:8090/infoplay2") class = "btn btn-primary" name = "action" value="Create InfoPlay">See Play's Info</button>
+        <button  type="submit" onclick=parent.open("http://localhost:8090/review") class = "btn btn-primary" name = "action" value="Create InfoPlay">Add Review</button>
+        <button  type="submit" onclick=parent.open("http://localhost:8090/team2") class = "btn btn-primary" name = "action" value="Create InfoPlay">See Theatre's Team</button>
+    </div>
+</form>
+
 
 </body>
+
 </html>

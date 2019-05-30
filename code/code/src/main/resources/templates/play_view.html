@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Plays</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body background="https://wallpapercave.com/wp/lORaIgI.jpg">
+<h1><font color="white">See all theatre's plays !</font></h1>
+
+
+<table  border="1">
+    <font color="white">
+        <thead>
+        <tr>
+            <th><font color="white">play.ID</font></th>
+            <th><font color="white">play.NAME</font></th>
+            <th><font color="white">play.AUTHORNAME</font></th>
+            <th><font color="white">play.TYPE</font></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="play : ${ playsList }" >
+
+            <td th:text="${ play.id }" style="color:#ffffff">ID</td>
+            <td th:text="${ play.name }" style="color:#ffffff"></td>
+            <td th:text="${ play.authorPlay }" style="color:#ffffff"></td>
+            <td th:text="${ play.typePlay }" style="color:#ffffff"></td>
+            </td>
+        </tr>
+        </tbody>
+    </font>
+</table>
+
+<br/>
+<br/>
+<br/>
+
+
+<form>
+    <div style="margin:20px">
+        <button  type="submit" onclick=parent.open("http://localhost:8090/infoplay2") class = "btn btn-primary" name = "action" value="Create InfoPlay">SEE INFO'S PLAY</button>
+    </div>
+</form>
+
+</body>
+
+</html>

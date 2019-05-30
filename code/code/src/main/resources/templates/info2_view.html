@@ -44,41 +44,12 @@
 <br/>
 <br/>
 
-<form   th:object="${newInfoPlay}" method = "POST">
-    <div class="col-sm-12">
-        <label><font color="gray">Play ID</font></label>
-        <input type = "text" th:field="*{id}"/>
+<form>
+    <div style="margin:20px">
+        <button  type="submit" onclick=parent.open("http://localhost:8090/ticket") class = "btn btn-primary" name = "action" value="Create InfoPlay">Buy Ticket</button>
     </div>
-    <div class="col-sm-12">
-        <label><font color="gray">Play Name</font></label>
-        <input type = "text" th:field="*{name}"/>
-    </div>
-    <div class="col-sm-12">
-        <label><font color="gray">Director Play</font></label>
-        <input type = "text" th:field="*{directorPlay}"/>
-    </div>
-    <div class="col-sm-12">
-        <label><font color="gray">Play's Major Actors</font></label>
-        <input type = "text" th:field="*{majorActors}"/>
-    </div>
-    <div class="col-sm-12">
-        <label><font color="gray">Play's Date</font></label>
-        <input type = "text" th:field="*{date}"/>
-    </div>
-    <div class="col-sm-12">
-        <label><font color="gray">Play's Duration</font></label>
-        <input type = "text" th:field="*{duration}"/>
-    </div>
-    <div class="col-sm-12">
-        <label><font color="gray">Play's Price</font></label>
-        <input type = "text" th:field="*{price}"/>
-    </div>
-
-
-    <button type="submit" class = "btn btn-primary" name = "action" value="Create InfoPlay">ADD Info Play</button>
-    <button type="submit" class = "btn btn-primary" name = "action" value="Update InfoPlay">EDIT Info Play</button>
-    <button type="submit" class = "btn btn-primary" name = "action" value="Delete InfoPlay">DELETE Info Play</button>
 </form>
+
 
 
 </body>

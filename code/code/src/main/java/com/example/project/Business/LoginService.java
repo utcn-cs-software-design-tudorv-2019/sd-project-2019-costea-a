@@ -1,5 +1,7 @@
 package com.example.project.Business;
 
+import com.example.project.Persistence.Entity.Admin;
+import com.example.project.Persistence.Entity.Client;
 import com.example.project.Persistence.Entity.Login;
 import com.example.project.Persistence.Repo.LoginRepository;
 import org.springframework.stereotype.Service;
@@ -11,6 +13,19 @@ import java.util.List;
 public class LoginService {
     @Inject
     LoginRepository loginRepository;
+
+    public Login findAdminByUsername(String username)
+    {
+        return loginRepository.findAdminByUsername(username);
+    }
+
+
+    public Login findClientByUsername(String username)
+    {
+        return loginRepository.findClientByUsername(username);
+    }
+
+
 
     public List<Login> getAllUsersLoggedIn()
     {
