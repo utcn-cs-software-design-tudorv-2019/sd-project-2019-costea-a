@@ -16,6 +16,18 @@ public class AdminService {
     @Inject
     PlayRepository playRepository;
 
+    @Inject
+    AdminRepository adminRepository;
+
+    public Admin findByFirstName(String username)
+    {
+        return adminRepository.findByFirstName(username);
+    }
+
+    public void saveAdmin(Admin admin){
+        adminRepository.save(admin);
+    }
+
 
     public List<Play> getAllPlays()
     {

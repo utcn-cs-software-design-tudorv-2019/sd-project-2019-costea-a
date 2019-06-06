@@ -21,6 +21,11 @@
             <th><font color="white">review.PlayType</font></th>
             <th><font color="white">review.AuthorReview</font></th>
             <th><font color="white">review.Message</font></th>
+            <th><font color="white">review.Play</font></th>
+            <th><font color="white">play.ID</font></th>
+            <th><font color="white">play.Name</font></th>
+            <th><font color="white">play.AuthorPlay</font></th>
+            <th><font color="white">play.TypePlay</font></th>
         </tr>
         </thead>
         <tbody>
@@ -31,6 +36,11 @@
             <td th:text="${ review.typePlay }" style="color:#ffffff"></td>
             <td th:text="${ review.authorReview }" style="color:#ffffff"></td>
             <td th:text="${ review.textReview }" style="color:#ffffff"></td>
+            <td>----></td>
+            <td th:text="${ review.play.id }" style="color:#0000ff">ID</td>
+            <td th:text="${ review.play.name }" style="color:#0000ff">fn</td>
+            <td th:text="${ review.play.authorPlay }" style="color:#0000ff">ln</td>
+            <td th:text="${ review.play.typePlay }" style="color:#0000ff">em</td>
             </td>
         </tr>
         </tbody>
@@ -47,11 +57,11 @@
         <input type = "text" th:field="*{id}"/>
     </div>
     <div class="col-sm-12">
-        <label><font color="gray">Review PlayName</font></label>
+        <label><font color="gray">Play Name</font></label>
         <input type = "text" th:field="*{namePlay}"/>
     </div>
     <div class="col-sm-12">
-        <label><font color="gray">Review PlayType</font></label>
+        <label><font color="gray">Play Type</font></label>
         <input type = "text" th:field="*{typePlay}"/>
     </div>
     <div class="col-sm-12">
@@ -61,6 +71,10 @@
     <div class="col-sm-12">
         <label><font color="gray">Review Message</font></label>
         <input type = "text" th:field="*{textReview}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Play ID</font></label>
+        <input type = "text" th:field="*{play}"/>
     </div>
 
     <div style="margin:30px">

@@ -1,6 +1,7 @@
 package com.example.project.Persistence.Entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "client")
@@ -22,6 +23,9 @@ public class Client {
 
     @Column
     private String address;
+
+    @OneToMany(mappedBy = "client", fetch = FetchType.EAGER)
+    private List<Ticket> orders;
 
 
     public Integer getId() {
@@ -62,5 +66,13 @@ public class Client {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public List<Ticket> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Ticket> orders) {
+        this.orders = orders;
     }
 }

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body background="https://wallpapercave.com/wp/lORaIgI.jpg">
+<h1><font color="white">Buy your ticket !</font></h1>
+<br/>
+<br/>
+<h4><font color="white">Here, you can see your options to choose when buying a ticket.</font></h4>
+
+<br/>
+<table  border="1">
+    <font color="white">
+        <thead>
+        <tr>
+            <th><font color="white">cart.ID</font></th>
+            <th><font color="white">cart.ClientID</font></th>
+            <th><font color="white">cart.NamePlay</font></th>
+            <th><font color="white">cart.Place</font></th>
+            <th><font color="white">cart.PlaceNumber</font></th>
+            <th><font color="white">cart.Category</font></th>
+            <th><font color="white">cart.Quantity</font></th>
+            <th><font color="white">client.ID</font></th>
+            <th><font color="white">client.FirstName</font></th>
+            <th><font color="white">client.LastName</font></th>
+            <th><font color="white">teacher.Email</font></th>
+            <th><font color="white">teacher.Address</font></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cart : ${ cartList }" >
+            <td th:text="${ cart.id }" style="color:#ffffff">ID</td>
+            <td th:text="${ cart.namePlay }" style="color:#ffffff"></td>
+            <td th:text="${ cart.place }" style="color:#ffffff"></td>
+            <td th:text="${ cart.placeNumber }" style="color:#ffffff"></td>
+            <td th:text="${ cart.category }" style="color:#ffffff"></td>
+            <td th:text="${ cart.quantity }" style="color:#ffffff"></td>
+            <td>----></td>
+            <td th:text="${ cart.client.id }" style="color:#0000ff">ID</td>
+            <td th:text="${ cart.client.firstName }" style="color:#0000ff">fn</td>
+            <td th:text="${ cart.client.lastName }" style="color:#0000ff">ln</td>
+            <td th:text="${ cart.client.email }" style="color:#0000ff">em</td>
+            <td th:text="${ cart.client.address }" style="color:#0000ff">em</td>
+            </td>
+        </tr>
+        </tbody>
+    </font>
+</table>
+
+<br/>
+<br/>
+<br/>
+
+<form   th:object="${newOrder}" method = "POST">
+    <div class="col-sm-12">
+        <label><font color="gray">Ticket ID</font></label>
+        <input type = "text" th:field="*{id}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Play's Name</font></label>
+        <input type = "text" th:field="*{namePlay}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Ticket Place</font></label>
+        <input type = "text" th:field="*{place}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Ticket PlaceNumber</font></label>
+        <input type = "text" th:field="*{placeNumber}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Ticket Category</font></label>
+        <input type = "text" th:field="*{category}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Client ID</font></label>
+        <input type = "text" th:field="*{client}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Order Quantity</font></label>
+        <input type = "text" th:field="*{quantity}"/>
+    </div>
+
+
+    <!--<button type="submit" class = "btn btn-primary" name = "action" value="Buy Ticket">BUY Ticket</button>-->
+    <div style="margin:20px">
+        <button  type="submit" class = "btn btn-primary" name = "action" value="Buy Ticket">Buy Ticket</button>
+        <button  type="submit" onclick=parent.open("http://localhost:8090/send-mail-attachment") class = "btn btn-primary" name = "action" value="Send Ticket">Send By Email</button>
+    </div>
+</form>
+
+
+
+
+</body>
+
+</html>

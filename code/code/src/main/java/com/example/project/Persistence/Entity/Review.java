@@ -1,6 +1,7 @@
 package com.example.project.Persistence.Entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "review")
@@ -21,6 +22,11 @@ public class Review {
 
     @Column
     private String textReview;
+
+    @ManyToOne
+    @JoinColumn(name = "play")
+    @NotNull
+    private Play play;
 
     public Integer getId() {
         return id;
@@ -60,5 +66,13 @@ public class Review {
 
     public void setTextReview(String textReview) {
         this.textReview = textReview;
+    }
+
+    public Play getPlay() {
+        return play;
+    }
+
+    public void setPlay(Play play) {
+        this.play = play;
     }
 }

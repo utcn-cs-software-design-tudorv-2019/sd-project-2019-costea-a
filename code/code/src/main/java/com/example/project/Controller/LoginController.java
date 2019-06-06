@@ -3,7 +3,6 @@ package com.example.project.Controller;
 import com.example.project.Business.AdminService;
 import com.example.project.Business.ClientService;
 import com.example.project.Business.LoginService;
-import com.example.project.Persistence.Entity.Client;
 import com.example.project.Persistence.Entity.Login;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,12 +13,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.inject.Inject;
-import java.util.List;
 
 @Controller
 public class LoginController {
     @Inject
     LoginService loginService;
+
+    @Inject
+    private  ClientService clientService;
+    @Inject
+    private AdminService adminService;
 
 /*
     @RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -65,16 +68,17 @@ public String getRegistationForm(){
         return "login_view";
     }
 
-   /* @RequestMapping(value="/register",method =RequestMethod.POST)
-    public String CreateAccount(@ModelAttribute(name="Client") Login client,Model model){
+    @RequestMapping(value = "/register", method = RequestMethod.POST)
+    public ModelAndView postRegistration(@RequestParam(value = "action") String action, @ModelAttribute(value = "newRegistration") Login client){
+    //@RequestMapping(value="/register",method =RequestMethod.POST)
+    //public String CreateAccount(@ModelAttribute(name="Client") Login client,Model model){
         if(loginService.findClientByUsername(client.getUsername())==null)
             loginService.create(client);
         else{
-            model.addAttribute("Username already exists",client.getUsername());
-            return "register";
+            return new ModelAndView("redirect:register");
         }
-        return "login_view";
-    }*/
+        return new ModelAndView("redirect:login");
+    }
 
 
 

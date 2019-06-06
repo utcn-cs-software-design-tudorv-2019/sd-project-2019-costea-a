@@ -39,10 +39,10 @@ public class MailService {
         MimeMessageHelper helper = new MimeMessageHelper(mimeMessage, true);
 
         helper.setTo(client.getEmailAddress());
-        helper.setSubject("Testing Mail API with Attachment");
-        helper.setText("Please find the attached document below.");
+        helper.setSubject("Your Theatre Ticket is Here !");
+        helper.setText("Please find the attached document below, containing the tickets for your favorite play. Enjoy !");
 
-        ClassPathResource classPathResource = new ClassPathResource("Attachment.pdf");
+        ClassPathResource classPathResource = new ClassPathResource("templates/ticket_view.html");
         helper.addAttachment(classPathResource.getFilename(), classPathResource);
 
         javaMailSender.send(mimeMessage);

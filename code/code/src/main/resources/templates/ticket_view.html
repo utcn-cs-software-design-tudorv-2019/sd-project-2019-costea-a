@@ -40,31 +40,10 @@
 <br/>
 <br/>
 
-<form   th:object="${newTicket}" method = "POST">
-    <div class="col-sm-12">
-        <label><font color="gray">Ticket ID</font></label>
-        <input type = "text" th:field="*{id}"/>
-    </div>
-    <div class="col-sm-12">
-        <label><font color="gray">Ticket Place</font></label>
-        <input type = "text" th:field="*{place}"/>
-    </div>
-    <div class="col-sm-12">
-        <label><font color="gray">Ticket PlaceNumber</font></label>
-        <input type = "text" th:field="*{placeNumber}"/>
-    </div>
-    <div class="col-sm-12">
-        <label><font color="gray">Ticket Category</font></label>
-        <input type = "text" th:field="*{category}"/>
-    </div>
-    <div class="col-sm-12">
-        <label><font color="gray">Play's Name</font></label>
-        <input type = "text" th:field="*{playName}"/>
-    </div>
-
+<form>
     <!--<button type="submit" class = "btn btn-primary" name = "action" value="Buy Ticket">BUY Ticket</button>-->
     <div style="margin:20px">
-        <button  type="submit" onclick=parent.open("http://localhost:8090/send-mail-attachment") class = "btn btn-primary" name = "action" value=" Ticket">Get Ticket</button>
+        <button  type="submit" onclick=parent.open("http://localhost:8090/ticket") class = "btn btn-primary" name = "action" value=" Ticket">Get Your Ticket !</button>
     </div>
 </form>
 

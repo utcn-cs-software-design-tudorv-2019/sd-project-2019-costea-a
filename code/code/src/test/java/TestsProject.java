@@ -1,6 +1,5 @@
 import com.example.project.Business.*;
 import com.example.project.Persistence.Entity.Play;
-import com.example.project.Persistence.Entity.Registration;
 import com.example.project.Persistence.Entity.Review;
 import com.example.project.Project;
 import org.junit.Test;
@@ -20,19 +19,7 @@ public class TestsProject {
     PlayService playService;
 
     @Inject
-    RegistrationService registrationService;
-
-    @Inject
     ReviewService reviewService;
-
-    @Test
-    public void testRegistration(){
-        Integer id = 7;
-        String username = "Ana";
-        String password = "poli";
-        Registration reg = new Registration();
-        registrationService.create(reg);
-    }
 
     @Test
     public void getInfoPlay(){
