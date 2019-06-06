@@ -16,6 +16,7 @@ public class Login {
     @Column
     private String password;
 
+
     public Integer getId() {
         return id;
     }
@@ -39,5 +40,7 @@ public class Login {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
 }
 

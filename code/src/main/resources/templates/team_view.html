@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Theatre's Team</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body background="https://wallpapercave.com/wp/lORaIgI.jpg">
+<h1><font color="white">Our awesome team !</font></h1>
+
+
+<table  border="1">
+    <font color="white">
+        <thead>
+        <tr>
+            <th><font color="white">member.ID</font></th>
+            <th><font color="white">member.Name</font></th>
+            <th><font color="white">member.Age</font></th>
+            <th><font color="white">member.Role</font></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="team : ${ teamList }" >
+
+            <td th:text="${ team.id }" style="color:#ffffff">ID</td>
+            <td th:text="${ team.name }" style="color:#ffffff"></td>
+            <td th:text="${ team.age }" style="color:#ffffff"></td>
+            <td th:text="${ team.role }" style="color:#ffffff"></td>
+            </td>
+        </tr>
+        </tbody>
+    </font>
+</table>
+
+<br/>
+<br/>
+<br/>
+
+<form   th:object="${newTeam}" method = "POST">
+    <div class="col-sm-12">
+        <label><font color="gray">Member's ID</font></label>
+        <input type = "text" th:field="*{id}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Member's Name</font></label>
+        <input type = "text" th:field="*{name}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Member's Age</font></label>
+        <input type = "text" th:field="*{age}"/>
+    </div>
+    <div class="col-sm-12">
+        <label><font color="gray">Member's Role</font></label>
+        <input type = "text" th:field="*{role}"/>
+    </div>
+
+
+    <button type="submit" class = "btn btn-primary" name = "action" value="Add Member">ADD Member</button>
+    <button type="submit" class = "btn btn-primary" name = "action" value="Update Member">EDIT Member</button>
+    <button type="submit" class = "btn btn-primary" name = "action" value="Delete Member">DELETE Member</button>
+</form>
+
+
+</body>
+
+</html>

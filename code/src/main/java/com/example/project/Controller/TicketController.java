@@ -1,6 +1,6 @@
 package com.example.project.Controller;
+
 import com.example.project.Business.TicketService;
-import com.example.project.Persistence.Entity.Review;
 import com.example.project.Persistence.Entity.Ticket;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,25 +18,23 @@ public class TicketController {
     TicketService ticketService;
 
     @RequestMapping(value = "/ticket", method = RequestMethod.GET)
-    public ModelAndView getTickets()
+    public ModelAndView getOrders()
     {
-        List<Ticket> ticketList = ticketService.getAllTickets();
+        List<Ticket>  cartList= ticketService.getAllOrders();
 
-        ModelAndView mav = new ModelAndView("ticket_view");
-        mav.addObject("ticketList", ticketList);
-        mav.addObject("newTicket", new Ticket());
+        ModelAndView mav = new ModelAndView("cart_view");
+        mav.addObject("cartList", cartList);
+        mav.addObject("newOrder", new Ticket());
         return mav;
-
     }
 
 
     @RequestMapping(value = "/ticket", method = RequestMethod.POST)
-    public ModelAndView postTickets(@RequestParam(value = "action") String action, @ModelAttribute(value = "newTicket") Ticket newTicket)
+    public ModelAndView postOrders(@RequestParam(value = "action") String action, @ModelAttribute(value = "newOrder") Ticket newOrder)
     {
         if(action.equals("Buy Ticket"))
-            ticketService.create(newTicket);
+            ticketService.create(newOrder);
 
         return new ModelAndView("redirect:ticket");
     }
-
 }

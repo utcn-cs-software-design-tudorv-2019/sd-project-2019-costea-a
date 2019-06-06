@@ -3,6 +3,9 @@ package com.example.project.Persistence.Entity;
 
 import javax.persistence.*;
 import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Date;
 
 @Entity
@@ -26,7 +29,7 @@ public class InfoPlay {
     private Date date;
 
     @Column
-    private Time duration;
+    private LocalTime duration;
 
     @Column
     private Integer price;
@@ -71,11 +74,11 @@ public class InfoPlay {
         this.date = date;
     }
 
-    public Time getDuration() {
+    public LocalTime getDuration() {
         return duration;
     }
 
-    public void setDuration(Time duration) {
+    public void setDuration(LocalTime duration) {
         this.duration = duration;
     }
 

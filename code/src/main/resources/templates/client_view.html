@@ -22,6 +22,7 @@
             <th><font color="white">client.LASTNAME</font></th>
             <th><font color="white">client.EMAIL</font></th>
             <th><font color="white">client.ADDRESS</font></th>
+         <!--   <th><font color="white">ticket entire data</font></th>-->
         </tr>
         </thead>
         <tbody>
@@ -32,6 +33,17 @@
             <td th:text="${ client.lastName }" style="color:#ffffff"></td>
             <td th:text="${ client.email }" style="color:#ffffff"></td>
             <td th:text="${ client.address }" style="color:#ffffff"></td>
+        <!--    <td th:text="${ client.orders }" style="color:#ffffff">
+                <p th:each="cart: ${ client.orders  }" style="color:#0000ff">
+                    <span th:text="${cart.id}" style="color:#0000ff"></span>
+                    <span th:text="${cart.namePlay}" style="color:#0000ff"></span>
+                    <span th:text="${cart.place}" style="color:#0000ff"></span>
+                    <span th:text="${cart.placeNumber}" style="color:#0000ff"></span>
+                    <span th:text="${cart.category}" style="color:#0000ff"></span>
+                    <span th:text="${cart.playName}" style="color:#ffffff"></span>
+                    <span th:text="${cart.quantity}" style="color:#0000ff"></span>
+                    <span th:text="${cart.client}" style="color:#ffffff"></span>
+                </p>-->
             </td>
         </tr>
         </tbody>
@@ -47,6 +59,7 @@
         <button  type="submit" onclick=parent.open("http://localhost:8090/play2") class = "btn btn-primary" name = "action" value="Create InfoPlay">See Theatre's Program</button>
         <button  type="submit" onclick=parent.open("http://localhost:8090/infoplay2") class = "btn btn-primary" name = "action" value="Create InfoPlay">See Play's Info</button>
         <button  type="submit" onclick=parent.open("http://localhost:8090/review") class = "btn btn-primary" name = "action" value="Create InfoPlay">Add Review</button>
+        <button  type="submit" onclick=parent.open("http://localhost:8090/team2") class = "btn btn-primary" name = "action" value="Create InfoPlay">See Theatre's Team</button>
     </div>
 </form>
 

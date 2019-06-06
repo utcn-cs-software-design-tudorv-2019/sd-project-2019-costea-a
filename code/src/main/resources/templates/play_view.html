@@ -15,18 +15,28 @@
         <thead>
         <tr>
             <th><font color="white">play.ID</font></th>
-            <th><font color="white">play.NAME</font></th>
-            <th><font color="white">play.AUTHORNAME</font></th>
-            <th><font color="white">play.TYPE</font></th>
+            <th><font color="white">play.Name</font></th>
+            <th><font color="white">play.AuthorName</font></th>
+            <th><font color="white">play.Type</font></th>
+       <!--     <th><font color="white">review entire data</font></th>-->
         </tr>
         </thead>
         <tbody>
-        <tr th:each="play : ${ playsList }" >
+        <tr th:each="play: ${ playsList }" >
 
             <td th:text="${ play.id }" style="color:#ffffff">ID</td>
             <td th:text="${ play.name }" style="color:#ffffff"></td>
             <td th:text="${ play.authorPlay }" style="color:#ffffff"></td>
             <td th:text="${ play.typePlay }" style="color:#ffffff"></td>
+        <!--    <td th:text="${ play.reviews }" style="color:#ffffff">
+                <p th:each="review: ${ play.reviews  }" style="color:#ffffff">
+                    <span th:text="${review.id}" style="color:#ffffff"></span>
+                    <span th:text="${review.namePlay}" style="color:#ffffff"></span>
+                    <span th:text="${review.typePlay}" style="color:#ffffff"></span>
+                    <span th:text="${review.authorReview}" style="color:#ffffff"></span>
+                    <span th:text="${review.textReview}" style="color:#ffffff"></span>
+                    <span th:text="${review.play}" style="color:#ffffff"></span>
+                </p>-->
             </td>
         </tr>
         </tbody>

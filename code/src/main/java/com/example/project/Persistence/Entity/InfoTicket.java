@@ -1,18 +1,14 @@
 package com.example.project.Persistence.Entity;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "ticket")
-public class Ticket {
+@Table(name = "infoticket")
+public class InfoTicket {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "idticket", nullable = false)
     private Integer id;
-
-    @Column
-    private String namePlay;
 
     @Column
     private String place;
@@ -24,12 +20,7 @@ public class Ticket {
     private String category;
 
     @Column
-    private Integer quantity;
-
-    @ManyToOne
-    @JoinColumn(name = "client")
-    @NotNull
-    private Client client;
+    private String playName;
 
     public Integer getId() {
         return id;
@@ -37,14 +28,6 @@ public class Ticket {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getNamePlay() {
-        return namePlay;
-    }
-
-    public void setNamePlay(String namePlay) {
-        this.namePlay = namePlay;
     }
 
     public String getPlace() {
@@ -71,19 +54,12 @@ public class Ticket {
         this.category = category;
     }
 
-    public Client getClient() {
-        return client;
+    public void setPlayName(String playName) {
+        this.playName = playName;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public String getPlayName() {
+        return playName;
     }
 
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
 }
